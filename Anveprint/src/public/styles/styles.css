@@ -1,0 +1,29 @@
+header {
+    background-color: #000;
+    color: #fff;
+    padding: 10px;
+}
+
+.Logo img{
+    width: 150px;
+}
+.ContactInfo {
+    position: absolute;
+    top: 10px;
+    left: 50%; /* Coloca el punto de partida en el centro horizontal */
+    transform: translateX(-50%); /* Centra el contenido horizontalmente */
+    display: flex;
+    align-items: center;
+}
+
+.BotonIndex {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    display: flex;
+
+  }
+  
+  .BotonIndex a {
+    margin-right: 10px;
+  }

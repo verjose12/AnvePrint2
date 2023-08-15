@@ -1,0 +1,41 @@
+/* Estilo personalizado para el cuerpo de la página */
+body {
+    background-color: #f8f9fa; /* Fondo gris claro */
+    color: #000000; /* Texto negro */
+}
+
+/* Estilo personalizado para el formulario */
+form {
+    margin: 20px auto;
+    max-width: 400px;
+    padding: 20px;
+    background-color: #ffffff; /* Fondo blanco */
+    border-radius: 10px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+}
+
+/* Estilo personalizado para los campos de entrada */
+input[type="text"],
+input[type="email"],
+input[type="password"] {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ced4da; /* Borde gris claro */
+    border-radius: 5px;
+}
+
+/* Estilo personalizado para el botón de enviar */
+button[type="submit"] {
+    background-color: #000000; /* Fondo negro */
+    color: #ffffff; /* Texto blanco */
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+/* Cambiar el estilo del botón al pasar el cursor sobre él */
+button[type="submit"]:hover {
+    background-color: #333333; /* Fondo gris oscuro */
+}
