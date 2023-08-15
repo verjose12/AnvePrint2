@@ -14,9 +14,15 @@ controller.list = (req, res)=>{
 };
 
 controller.save = (req, res)=>{
-    console.log(req.body); //recibimos los datos a traves de este objeto req.body
-    res.render('admin')
-
+    const data = req.body;
+    req.getConnection((err, conn) => {
+        conn.query('INSERT INTO usuarios set ?',[data],(err, usuarios)=>{
+            console.log(usuarios);
+            res.render('admin')
+        });
+    })
+    /*console.log(req.body); //recibimos los datos a traves de este objeto req.body
+    res.render('admin')*/
     };
 
 module.exports = controller;
