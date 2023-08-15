@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Iniciar Sesión</title>
+    <!-- Agrega el enlace al archivo CSS de Bootstrap -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="styles/stylesLog.css">
+</head>
+<body>
+    <div class="container">
+        <h1 class="mt-4">Iniciar Sesión</h1>
+        <form action="/login" method="post">
+            <div class="form-group">
+                <label for="correo">Correo</label>
+                <input type="text" name="correo" id="correo" class="form-control" required>
+            </div>
+            <div class="form-group">
+                <label for="contrasena">Contraseña:</label>
+                <input type="password" name="contrasena" id="contrasena" class="form-control" required>
+            </div>
+            <button type="submit" class="btn btn-dark">Iniciar Sesión</button>
+        </form>
+    </div>
+</body>
+</html>

@@ -28,6 +28,7 @@ app.use(myConnection(mysql,{
   port: 3306,
 }, 'single'));
 
+//configuracion en servidor para conectar con metodo POST
 app.use(express.urlencoded({extended: false}));
 
 //routes
