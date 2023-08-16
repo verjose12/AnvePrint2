@@ -1,5 +1,38 @@
 <%- include('partials/_header') %>
 
-<h1>Admin</h1>
+<div class="sidebar">
+    <ul>
+        <li><a href="#">Usuarios</a></li>
+        <li><a href="#">Productos</a></li>
+        <li><a href="#">Pedidos</a></li>
+    </ul>
+</div>
 
+<div class="main-content">
+    <table class="table">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Nombre</th>
+                <th>Descripción</th>
+                <th>Precio</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>1</td>
+                <td>Producto 1</td>
+                <td>Descripción del producto 1</td>
+                <td>$10.00</td>
+            </tr>
+            <tr>
+                <td>2</td>
+                <td>Producto 2</td>
+                <td>Descripción del producto 2</td>
+                <td>$15.00</td>
+            </tr>
+            <!-- Agrega más filas aquí -->
+        </tbody>
+    </table>
+</div>
 <%- include('partials/_footer') %>

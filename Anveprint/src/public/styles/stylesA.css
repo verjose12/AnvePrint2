@@ -1,0 +1,48 @@
+/* Estilos para la navegación lateral */
+.sidebar {
+    width: 200px;
+    background-color: black;
+    color: white;
+    height: 100vh;
+    float: left;
+}
+
+.sidebar ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.sidebar li {
+    padding: 10px;
+    text-align: center;
+}
+
+.sidebar a {
+    text-decoration: none;
+    color: white;
+}
+
+/* Estilos para la tabla */
+.table {
+    width: 80%;
+    margin: 20px auto;
+    border-collapse: collapse;
+    color: black;
+}
+
+.table th,
+.table td {
+    border: 1px solid black;
+    padding: 8px;
+    text-align: center;
+}
+
+/* Estilos generales */
+body {
+    margin: 0;
+    padding: 0;
+}
+
+.main-content {
+    margin-left: 220px;
+}
