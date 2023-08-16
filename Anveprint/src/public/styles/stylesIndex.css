@@ -1,0 +1,63 @@
+.carousel-item img {
+    max-width: 600px; /* Establecer un ancho máximo para el tamaño mediano */
+    height: auto;
+    margin: 0 auto; /* Centrar la imagen horizontalmente */
+}
+
+.carousel-caption {
+    background-color: rgba(0, 0, 0, 0.7);
+    color: #fff;
+    padding: 30px; /* Reducir el padding para un tamaño mediano */
+    max-width: 1000px; /* Establecer un ancho máximo para la caption */
+    margin: 0 auto; /* Centrar la caption horizontalmente */
+}
+
+.carousel-caption h3 {
+    margin: 0;
+    padding: 0;
+}
+
+.carousel-caption p {
+    margin: 10px 0;
+}
+
+
+header h1 {
+    margin: 0;
+}
+
+header .btn {
+    margin-left: 10px;
+}
+
+header .fa-shopping-cart {
+    font-size: 1.5rem;
+    color: #fff;
+}
+
+@media (max-width: 767px) {
+    header h1 {
+        font-size: 1.5rem;
+    }
+
+    header .btn {
+        margin: 5px;
+    }
+}
+
+/* Estilos para la línea separadora */
+.header-separator {
+    border-top: 1px solid #000;
+    margin: 10px 0;
+    background-color: #000; /* Fondo negro */
+    color: #fff; /* Texto blanco */
+    padding: 10px 0; /* Ajustar el espacio interno */
+    text-align: center; /* Centrar el texto horizontalmente */
+    font-weight: bold; /* Fuente en negrita */
+}
+
+/* Estilos para el texto "Catálogo de nuestros productos" */
+.text-center {
+    text-align: center;
+    margin: 20px 0;
+}
