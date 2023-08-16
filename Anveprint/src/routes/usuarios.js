@@ -9,6 +9,7 @@ router.get('/index', usuarioController.mostrarindex);
 router.get('/registro', usuarioController.mostrarRegistro);//Ruta para mostrar formulario Registro
 router.get('/login', usuarioController.mostrarlogin);//Ruta para mostrar Login
 router.get('/admin', usuarioController.mostrarAdmin);//
+router.get('/usuario/perfiluser', usuarioController.mostraruser);//
 router.post('/add', usuarioController.save); //Ruta para agregar un usuario desde registro.ejs
 router.post('/login', usuarioController.autenticarLogin);//Ruta para iniciar sesion
 // Ruta para insertar un producto (POST request)

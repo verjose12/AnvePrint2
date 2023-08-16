@@ -19,7 +19,7 @@ controller.save = (req, res)=>{
     req.getConnection((err, conn) => {
         conn.query('INSERT INTO usuarios set ?',[data],(err, usuarios)=>{
             console.log(usuarios);
-            res.render('admin')
+            res.render('usuario/perfiluser')
         });
     })
     /*console.log(req.body); //recibimos los datos a traves de este objeto req.body
@@ -43,7 +43,13 @@ controller.mostrarindex = (req, res) => {
 controller.mostrarlogin = (req, res) => {
     res.render('login');
 };
-//Funcion para mostrar admin.ejs
+
+// Función para mostrar la vista de perfiluser.ejs
+controller.mostraruser = (req, res) => {
+    res.render('usuario/perfiluser');
+};
+
+//Funcion para mostrar admin.ejs con la
 controller.mostrarAdmin = (req, res) => {
     req.getConnection((err, conn) => {
         if (err) {
@@ -61,6 +67,7 @@ controller.mostrarAdmin = (req, res) => {
     });
 };
 
+//metodo para ingresar al perfil
 controller.autenticarLogin = (req, res) => {
     const { correo, contrasena } = req.body;
 
@@ -68,9 +75,28 @@ controller.autenticarLogin = (req, res) => {
     // ...
 
     // Si la autenticación es exitosa, redirige a la página de perfil (por ejemplo)
-    res.redirect('/admin'); // Cambia '/perfil' a la ruta que deseas redirigir después del inicio de sesión exitoso
+    res.redirect('admin'); // Cambia '/perfil' a la ruta que deseas redirigir después del inicio de sesión exitoso
 };
 
+//Funcion para mostrar admin.ejs esta funcion va de la mano con la funcion debajo
+controller.mostrarAdmin = (req, res) => {
+    req.getConnection((err, conn) => {
+        if (err) {
+            return res.json(err);
+        }
+        const query = 'SELECT * FROM productos';
+        conn.query(query, (err, productos) => {
+            if (err) {
+                return res.json(err);
+            }
+            res.render('admin', {
+                data: productos // Pasa la variable 'data' a la vista
+            });
+        });
+    });
+};
+
+//Metodo post insertar producto a la tabla productos de admin
 controller.insertarProducto = (req, res) => {
     const { nombre, descripcion, precio } = req.body;
 

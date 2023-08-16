@@ -52,6 +52,16 @@ header .fa-shopping-cart {
     background-color: #000; /* Fondo negro */
     color: #fff; /* Texto blanco */
     padding: 10px 0; /* Ajustar el espacio interno */
+    text-align: left; /* Centrar el texto horizontalmente */
+    font-weight: bold; /* Fuente en negrita */
+}
+
+.header-separator2 {
+    border-top: 1px solid #000;
+    margin: 10px 0;
+    background-color: #000; /* Fondo negro */
+    color: #fff; /* Texto blanco */
+    padding: 10px 0; /* Ajustar el espacio interno */
     text-align: center; /* Centrar el texto horizontalmente */
     font-weight: bold; /* Fuente en negrita */
 }
