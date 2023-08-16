@@ -45,7 +45,20 @@ controller.mostrarlogin = (req, res) => {
 };
 //Funcion para mostrar admin.ejs
 controller.mostrarAdmin = (req, res) => {
-    res.render('admin'); // Asegúrate de que 'admin' coincida con el nombre de tu archivo de vista
+    req.getConnection((err, conn) => {
+        if (err) {
+            return res.json(err);
+        }
+        const query = 'SELECT * FROM productos';
+        conn.query(query, (err, productos) => {
+            if (err) {
+                return res.json(err);
+            }
+            res.render('admin', {
+                data: productos // Pasa la variable 'data' a la vista
+            });
+        });
+    });
 };
 
 controller.autenticarLogin = (req, res) => {
@@ -57,5 +70,25 @@ controller.autenticarLogin = (req, res) => {
     // Si la autenticación es exitosa, redirige a la página de perfil (por ejemplo)
     res.redirect('/admin'); // Cambia '/perfil' a la ruta que deseas redirigir después del inicio de sesión exitoso
 };
+
+controller.insertarProducto = (req, res) => {
+    const { nombre, descripcion, precio } = req.body;
+
+    req.getConnection((err, conn) => {
+        if (err) {
+            return res.json(err);
+        }
+
+        const query = 'INSERT INTO productos (nombre, descripcion, precio) VALUES (?, ?, ?)';
+        conn.query(query, [nombre, descripcion, precio], (err, result) => {
+            if (err) {
+                return res.json(err);
+            }
+
+            res.redirect('/admin'); // Redirecciona a la página de admin después de la inserción
+        });
+    });
+};
+
 
 module.exports = controller;

@@ -11,4 +11,8 @@ router.get('/login', usuarioController.mostrarlogin);//Ruta para mostrar Login
 router.get('/admin', usuarioController.mostrarAdmin);//
 router.post('/add', usuarioController.save); //Ruta para agregar un usuario desde registro.ejs
 router.post('/login', usuarioController.autenticarLogin);//Ruta para iniciar sesion
+// Ruta para insertar un producto (POST request)
+router.post('/insertar-producto', usuarioController.insertarProducto);
+
+
 module.exports = router;
