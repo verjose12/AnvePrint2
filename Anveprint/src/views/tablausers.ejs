@@ -1,5 +1,6 @@
 <%- include('partials/_header') %>
 
+</section>
 <div class="sidebar">
     <ul>
         <li><a href="/tablausers">Usuarios</a></li>
@@ -14,21 +15,20 @@
             <tr>
                 <th>ID</th>
                 <th>Nombre</th>
-                <th>Descripcion</th>
-                <th>Precio</th>
+                <th>Telefono</th>
+                <th>Correo</th>
             </tr>
         </thead>
         <tbody>
-            <% data.forEach(productos => { %>
+            <% data.forEach(usuarios => { %>
             <tr>
-                <td><%= productos.id %></td>
-                <td><%= productos.nombre %></td>
-                <td><%= productos.descripcion %></td>
-                <td>$<%= productos.precio %></td>
+                <td><%= usuarios.id %></td>
+                <td><%= usuarios.nombre %></td>
+                <td><%= usuarios.phone %></td>
+                <td><%= usuarios.correo %></td>
             </tr>
             <% }); %>
         </tbody>
     </table>
 </div>
-
 <%- include('partials/_footer') %>

@@ -1,0 +1,24 @@
+.carousel-inner img {
+    display: block; /* Asegura que la imagen sea un bloque para aplicar el margen automático */
+    margin: 0 auto; /* Margen automático en los lados para centrar horizontalmente */
+    max-width: 20%;
+    width: auto;
+    height: auto;
+}
+
+.containerCatalogo {
+    display: flex; /* Utilizamos flexbox para centrar verticalmente */
+    flex-direction: column; /* Colocamos la imagen y el texto en columnas */
+    align-items: center; /* Centramos horizontalmente en el centro */
+    text-align: center; /* Centramos el texto horizontalmente */
+  }
+  
+  .containerCatalogo img {
+    max-width: 30%;
+    width: auto;
+    height: auto;
+  }
+  
+
+
+  

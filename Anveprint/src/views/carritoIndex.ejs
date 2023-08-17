@@ -1,0 +1,22 @@
+<form id="paypalForm" target="paypal" action="https://www.paypal.com/cgi-bin/webscr" method="post">
+    <input type="hidden" name="cmd" value="_cart">
+    <input type="hidden" name="business" value="matthewpmacdonald@hotmail.com">
+    <input type="image" style="margin: 3px" src="https://www.paypal.com/en_US/i/btn/view_cart.gif" border="0" name="submit" alt="Make payments with PayPal - it's fast, free and secure!">
+    <input type="hidden" name="display" value="1">
+    <input type="hidden" name="page_style" value="BrainFood">
+</form>
+
+<p id="emptyCartMessage" style="display: none;">Your cart is empty.</p>
+
+<script>
+    const paypalForm = document.getElementById("paypalForm");
+    const emptyCartMessage = document.getElementById("emptyCartMessage");
+
+    paypalForm.addEventListener("submit", function(event) {
+        if ("") {
+            event.preventDefault(); // Evitar enviar el formulario
+            emptyCartMessage.style.display = "block"; // Mostrar mensaje de carrito vacío
+        }
+    });
+</script>
+    

@@ -49,6 +49,61 @@ controller.mostraruser = (req, res) => {
     res.render('usuario/perfiluser');
 };
 
+// Función para mostrar la vista de perfiluser.ejs
+controller.mostrarcarrito = (req, res) => {
+    res.render('carritoIndex');
+};
+
+// Función para mostrar la vista de Catalogo1.ejs
+controller.mostrarcatalogo = (req, res) => {
+    res.render('Catalogos/Catalogo1');
+};
+
+// Función para mostrar la vista de Catalogo1.ejs
+controller.mostrarcatalogo2 = (req, res) => {
+    res.render('Catalogos/Catalogo2');
+};
+// Función para mostrar la vista de Catalogo1.ejs
+controller.mostrarcatalogo3 = (req, res) => {
+    res.render('Catalogos/Catalogo3');
+};
+
+// Función para mostrar la vista de tabla2.ejs
+controller.mostrarTabla2 = (req, res) => {
+    req.getConnection((err, conn) => {
+        if (err) {
+            return res.json(err);
+        }
+        const query = 'SELECT * FROM usuarios';
+        conn.query(query, (err, usuarios) => {
+            if (err) {
+                return res.json(err);
+            }
+            res.render('tablausers', {
+                data: usuarios // Pasa la variable 'data' a la vista
+            });
+        });
+    });
+};
+
+// Función para mostrar la vista de tabla1.ejs
+controller.mostrarTabla1 = (req, res) => {
+    req.getConnection((err, conn) => {
+        if (err) {
+            return res.json(err);
+        }
+        const query = 'SELECT * FROM pedidos';
+        conn.query(query, (err, pedidos) => {
+            if (err) {
+                return res.json(err);
+            }
+            res.render('tablapedidos', {
+                data: pedidos // Pasa la variable 'data' a la vista
+            });
+        });
+    });
+};
+
 //Funcion para mostrar admin.ejs con la
 controller.mostrarAdmin = (req, res) => {
     req.getConnection((err, conn) => {

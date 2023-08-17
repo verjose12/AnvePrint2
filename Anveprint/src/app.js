@@ -2,8 +2,8 @@ const express = require('express');
 const morgan = require('morgan');
 const path = require('path');
 const mysql = require('mysql');
+const configura= require('./configdb');
 const myConnection = require ('express-myconnection');
-const port = 3001;
 const app = express();
 
 //importing routes
@@ -20,13 +20,14 @@ app.set('views', path.join(__dirname, 'views'));
 //middlewares
 
 app.use(morgan('dev'));
-app.use(myConnection(mysql,{
-  host: 'localhost',
-  user: 'verjose',
-  password: 'root',
-  database: 'db_anve2',
-  port: 3306,
+app.use(myConnection(mysql, {
+  host:configura.db_host,
+  user:configura.db_user,
+  password: configura.db_password,
+  database: configura.db_database,
+  port: configura.db_port,
 }, 'single'));
+
 
 //configuracion en servidor para conectar con metodo POST
 app.use(express.urlencoded({extended: false}));
@@ -39,6 +40,6 @@ app.use('/', usuariosRoutes);
 app.use(express.static(path.join(__dirname, 'public')));
 
 //coneccion servidor
-app.listen(port, () => { // metodo listen 
-    console.log(`Servidor escuchando en esta ruta http://localhost:${port}`); // muestra en consola el mensae ¨Servidor escuchado ...¨
+app.listen(configura.port, () => { // metodo listen 
+    console.log(`Servidor escuchando en esta ruta http://localhost:${configura.port}`); // muestra en consola el mensae ¨Servidor escuchado ...¨
   });
